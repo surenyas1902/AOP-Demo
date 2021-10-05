@@ -1,6 +1,7 @@
 package com.surendiran.aopdemo;
 
 import com.surendiran.aopdemo.dao.AccountDAO;
+import com.surendiran.aopdemo.dao.MembershipDAO;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class MainDemoApp {
@@ -13,10 +14,20 @@ public class MainDemoApp {
         // get the bean from spring container
         AccountDAO accountDAO = annotationContext.getBean("accountDAO",AccountDAO.class);
 
+        MembershipDAO membershipDAO = annotationContext.getBean("membershipDAO", MembershipDAO.class);
+
         // call the business method
-        accountDAO.addAccount();
+        membershipDAO.addAccount();
+
+        membershipDAO.goToSleep();
+
+        Account account = new Account();
+        // call the business method
+        accountDAO.addAccount(account, true);
 
         // close the context
         annotationContext.close();
     }
+
+
 }

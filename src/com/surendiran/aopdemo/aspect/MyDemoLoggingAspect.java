@@ -12,14 +12,9 @@ public class MyDemoLoggingAspect {
 
     // let's start with an @Before advice
 
-    @Before("execution(public void addAccount())")
+    @Before("execution(* com.surendiran.aopdemo.dao.*.*(..))")
     public void beforeAddAccountAdvice() {
-        System.out.println("\n======>>> Exeucting @Before advice on addAccount()");
+        System.out.println("\n======>>> Executing @Before advice on addAccount()");
     }
 
-    @Before("execution(public void add*())")
-    public void beforeAddAccountAdvice1()
-    {
-        System.out.println("\nExecuting @Before 2");
-    }
 }
