@@ -25,6 +25,11 @@ public class MainDemoApp {
         // call the business method
         accountDAO.addAccount(account, true);
 
+        System.out.println("For Getter and Setter process");
+
+        accountDAO.setName("Surendiran");
+        accountDAO.getServiceCode();
+
         // close the context
         annotationContext.close();
     }

@@ -7,16 +7,11 @@ import org.springframework.stereotype.Component;
 
 @Aspect
 @Component
-@Order(2)
-public class MyDemoLoggingAspect {
-
-    // create a pointcut for setter methods
-
-    // create point: include package... exclude getter/setter
+@Order(-4)
+public class MyApiAnalyticsAspect {
 
     @Before("com.surendiran.aopdemo.aspect.AOPExpressions.pointcutDeclarationExcludeGetSet()")
-    public void beforeAddAccountAdvice() {
-        System.out.println("\n======>>> Executing @Before advice on addAccount()");
+    public void performApiAnalytics() {
+        System.out.println("\n=====> Performing API Analytics");
     }
-
 }
