@@ -22,6 +22,8 @@ public class MainDemoApp {
         membershipDAO.goToSleep();
 
         Account account = new Account();
+        account.setName("Surendiran");
+        account.setLevel("Level 1");
         // call the business method
         accountDAO.addAccount(account, true);
 
